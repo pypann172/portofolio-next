@@ -1,6 +1,6 @@
 export default function SkillCard({ nama, level }) {
     return (
-        <div className="rounded-xl border border-gray-200 text-utama bg-white p-5 shadow-sm">
+        <div className="rounded-xl border border-gray-200 text-utama bg-gray-100 p-5 shadow-sm">
             <h3 className="text-lg font-semibold text-utama">{nama}</h3>
             <p className="mt-1 text-sm text-gray-600">Level: {level}</p>
         </div>
