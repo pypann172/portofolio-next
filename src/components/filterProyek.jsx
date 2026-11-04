@@ -11,8 +11,10 @@ const daftarKategori = [
   "Next.JS",
   "Figma",
 ];
-const tombolBiasa = "rounded-full border border-utama dark:border-slate-500 px-4 py-1 text-sm font-semibold text-utama dark:text-blue-200";
-const tombolAktif = "rounded-full border border-aksen bg-aksen px-4 py-1 text-sm font-semibold text-white";
+const tombolBiasa =
+  "rounded-full border border-utama dark:border-slate-500 px-4 py-1 text-sm font-semibold text-utama dark:text-blue-200";
+const tombolAktif =
+  "rounded-full border border-aksen bg-aksen px-4 py-1 text-sm font-semibold text-white";
 
 export default function FilterProyek({ proyek }) {
   const [kategori, setKategori] = useState("Semua");
@@ -20,7 +22,9 @@ export default function FilterProyek({ proyek }) {
   const kataKecil = kata.toLowerCase();
   const hasil = proyek.filter((p) => {
     const cocokKategori = kategori === "Semua" || p.kategori === kategori;
-    const cocokKata = p.judul.toLowerCase().includes(kataKecil);
+    const cocokJudul = p.judul.toLowerCase().includes(kataKecil);
+    const cocokDeskripsi = p.deskripsi.toLowerCase().includes(kataKecil);
+    const cocokKata = cocokJudul || cocokDeskripsi;
     return cocokKategori && cocokKata;
   });
 
@@ -50,16 +54,32 @@ export default function FilterProyek({ proyek }) {
           placeholder="Contoh: Next.JS"
           className="mt-1 w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 p-2 dark:text-gray-100 md:w-80"
         />
+        {kata !== "" && (
+          <button
+            type="button"
+            onClick={() => setKata("")}
+            className="mt-2 text-sm font-semibold text-aksen dark:textred-300 hover:underline"
+          >
+            Hapus pencarian
+          </button>
+        )}
       </div>
-      <p className="mt-4 text-gray-700 dark:text-gray-300  ">Kategori terpilih: {kategori}</p>
+      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+        Menampilkan {hasil.length} dari {proyek.length} proyek
+      </p>
+      <p className="mt-4 text-gray-700 dark:text-gray-300  ">
+        Kategori terpilih: {kategori}
+      </p>
       <div className="mt-6 grid gap-6 md:grid-cols-3">
         {hasil.map((item) => (
           <ProyekCard key={item.slug} proyek={item} />
         ))}
       </div>
       {hasil.length === 0 && (
-        <p className="mt-6 rounded-xl border border-dashed border-gray-300 dark:border-slate-600
- p-6 text-center text-gray-600 dark:text-gray-400 ">
+        <p
+          className="mt-6 rounded-xl border border-dashed border-gray-300 dark:border-slate-600
+ p-6 text-center text-gray-600 dark:text-gray-400 "
+        >
           Belum ada proyek yang cocok.
         </p>
       )}
