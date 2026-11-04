@@ -3,14 +3,14 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-col items-center px-4 py-20 text-center">
-      <p className="text-6xl font-bold text-red-600 dark:text-red-300">404</p>
-      <h1 className="mt-4 text-3xl font-bold text-utama dark:text-sky-200">Halaman tidak ditemukan</h1>
-      <p className="mt-2 text-gray-700 dark:text-gray-300">
+      <p className="text-6xl font-bold text-red-600 ">404</p>
+      <h1 className="mt-4 text-3xl font-bold text-utama dark:text-blue-200 text-utama dark:text-blue-200 ">Halaman tidak ditemukan</h1>
+      <p className="mt-2 text-gray-700 dark:text-gray-300   ">
         Alamat yang kamu buka tidak ada atau sudah dipindahkan.
       </p>
       <Link
         href="/"
-        className="mt-6 rounded-lg bg-utama px-5 py-2 font-semibold text-white"
+        className="mt-6 rounded-lg bg-utama  px-5 py-2 font-semibold text-white"
       >
         Kembali ke Beranda
       </Link>

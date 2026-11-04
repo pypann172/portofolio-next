@@ -22,17 +22,15 @@ export default async function DetailProyek({ params }) {
     <main className="mx-auto max-w-3xl px-4 py-10">
       <Link
         href="/proyek"
-        className="text-sm font-semibold textaksen hover:underline"
+        className="text-sm font-semibold text-aksen hover:underline"
       >
         &larr; Kembali ke daftar proyek
       </Link>
       <h1
-        className="mt-4 text-3xl font-bold text-utama
-md:text-4xl"
-      >
+        className="mt-4 text-3xl font-bold text-utama dark:text-blue-200 md:text-4xl">
         {item.judul}
       </h1>
-      <p className="mt-2 text-gray-600">
+      <p className="mt-2 text-gray-600 dark:text-gray-400 ">
         {item.kategori} &middot; Dibuat di {item.minggu}
       </p>
       <Image
@@ -41,10 +39,10 @@ md:text-4xl"
         width={640}
         height={420}
         loading="eager"
-        className="mt-6 h-auto w-full rounded-xl border bordergray-200"
+        className="mt-6 h-auto w-full rounded-xl border border-gray-200 dark:border-slate-700"
       />
       <p className="mt-6 text-lg">{item.deskripsi}</p>
-      <h2 className="mt-8 text-2xl font-bold text-utama">Yang Saya Pelajari</h2>
+      <h2 className="mt-8 text-2xl font-bold text-utama dark:text-blue-200 ">Yang Saya Pelajari</h2>
       <ul className="mt-3 list-disc pl-5">
         {item.fitur.map((f) => (
           <li key={f}>{f}</li>

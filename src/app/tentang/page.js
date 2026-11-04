@@ -88,7 +88,7 @@ export default function Tentang() {
       </div>
       <div className="mt-10">
         <Kartu judul="Jadwal Belajar">
-          <table className="w-full text-left">
+          <table className="border-b border-gray-200 dark:border-slate-700">
             <thead className="bg-utama text-white">
               <tr>
                 <th className="p-2">Hari</th>
@@ -98,7 +98,8 @@ export default function Tentang() {
             </thead>
             <tbody>
               {jadwal.map((j) => (
-                <tr key={j.hari} className="border-b border-gray-200">
+                <tr key={j.hari} className="border-b border-gray-200 dark:border-slate-700
+">
                   <td className="p-2">{j.hari}</td>
                   <td className="p-2">{j.waktu}</td>
                   <td className="p-2">{j.kegiatan}</td>

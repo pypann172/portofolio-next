@@ -3,6 +3,7 @@
 import Link from "next/link";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
+import TombolTema from "./tombolTema";
 
 const geforce = localFont({
   src: [
@@ -60,6 +61,7 @@ export default function Navbar() {
             );
           })}
         </ul>
+        <TombolTema />
       </nav>
     </header>
   );

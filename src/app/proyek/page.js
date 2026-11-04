@@ -1,23 +1,24 @@
-import ProyekCard from "@/components/proyekCard";
+import FilterProyek from "@/components/filterProyek";
 import { proyek } from "@/data/proyek";
+
+export const metadata = {
+  title: "Proyek",
+  description: "Daftar proyek HTML, CSS, dan JavaScript karya Moh. Irfan Syah.",
+};
 export default function DaftarProyek() {
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
+    <main className="mx-auto w-full max-w-5xl px-4 py-10">
       <h1
-        className="text-3xl font-bold text-utama
+        className="text-3xl font-bold text-utama dark:text-blue-200 
 md:text-4xl"
       >
         Proyek Saya
       </h1>
-      <p className="mt-3 text-lg text-gray-700">
+      <p className="mt-3 text-lg text-gray-700 dark:text-gray-300  ">
         Kumpulan hasil belajar saya di Kelas Industri UBIG. Klik kartu untuk
         melihat detailnya.
       </p>
-      <div className="mt-8 grid gap-6 md:grid-cols-3">
-        {proyek.map((item) => (
-          <ProyekCard key={item.slug} proyek={item} />
-        ))}
-      </div>
+      <FilterProyek proyek={proyek} />
     </main>
   );
 }

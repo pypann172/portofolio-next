@@ -4,7 +4,7 @@ export default function ProyekCard({ proyek }) {
   return (
     <Link
       href={`/proyek/${proyek.slug}`}
-      className="block overflow-hidden rounded-xl border bordergray-200 bg-white shadow-sm hover:shadow-md"
+      className="block overflow-hidden rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900  shadow-sm hover:shadow-md"
     >
       <Image
         src={proyek.gambar}
@@ -15,14 +15,15 @@ export default function ProyekCard({ proyek }) {
         className="h-auto w-full"
       />
       <div className="p-5">
-        <span
-          className="rounded-full bg-latar px-3 py-1 text-xs
-font-semibold text-utama"
-        >
+        <span className="rounded-full bg-latar px-3 py-1 text-xs font-semibold text-utama dark:bg-slate-800 dark:text-blue-200">
           {proyek.kategori}
         </span>
-        <h3 className="mt-3 text-lg font-semibold textutama">{proyek.judul}</h3>
-        <p className="mt-1 text-sm text-gray-600">{proyek.deskripsi}</p>
+        <h3 className="mt-3 text-lg font-semibold text-utama dark:text-blue-200">
+          {proyek.judul}
+        </h3>
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 ">
+          {proyek.deskripsi}
+        </p>
       </div>
     </Link>
   );
