@@ -6,8 +6,7 @@ import ProyekCard from "@/components/proyekCard";
 const daftarKategori = [
   "Semua",
   "HTML",
-  "CSS",
-  "JavaScript",
+  "ESP32",
   "Next.JS",
   "Figma",
 ];

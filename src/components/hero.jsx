@@ -26,7 +26,7 @@ export default function Hero({ nama, tagLine }) {
                 width={180}
                 height={180}
                 loading="eager"
-                className="w-40 h-40 rounded-full overflow-hidden object-cover"
+                className="w-40 h-40 rounded-full overflow-hidden object-cover border-3 border-utama dark:border-slate-500 md:w-50 md:h-50"
             />
             <div>
                 <h1 className="text-3xl font-bold text-utama dark:text-blue-200 ">

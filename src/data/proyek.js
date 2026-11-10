@@ -39,5 +39,75 @@ export const proyek = [
             "Desain Aplikasi Mobile PPOB",
             "Mockup Aplikasi Top Up Game"
         ],
+    },
+    {
+        slug: "web-rexxarion-store",
+        judul: "Web Rexxarion Store",
+        kategori: "Next.JS",
+        waktu: "2026",
+        gambar: "/assets/projects/webRexxarionStore.png",
+        deskripsi: "Website Toko Online yang dibuat menggunakan Framework Next.JS, TailwindCSS, serta Supabase sebagai database.",
+        fitur: [
+            "Halaman Home, About, Product, dan Contact",
+            "Dokumentasi Toko Online",
+            "Fitur Dark Mode",
+            "Fitur Form Kontak",
+            "Fitur CRUD Product",
+            "Halaman CV",
+        ],
+    },
+    {
+        slug : "web-bakso-nusantara",
+        judul : "Web Bakso Nusantara",
+        kategori : "HTML",
+        waktu : "2026",
+        gambar : "/assets/projects/webBaksoNusantara.png",
+        deskripsi : "Website Bakso Nusantara yang dibuat menggunakan HTML dan CSS.",
+        fitur : [
+            "Halaman Home, About, Product, dan Contact",
+            "Dokumentasi Produk Bakso Nusantara",
+            "Fitur Form Kontak",
+        ]
+    },
+    {
+        slug: "iot-pendeteksi-sungai",
+        judul: "IoT Pendeteksi Sungai",
+        kategori: "ESP32",
+        waktu: "2026",
+        gambar: "/assets/projects/pendeteksiSungai.png",
+        deskripsi: "IoT Pendeteksi Sungai yang dibuat menggunakan Arduino dan NodeJS.",
+        fitur: [
+            "Pendeteksi Sungai",
+            "Pendeteksi Air",
+        ],  
+    },
+    {
+        slug: "web-portfolio-irfan",
+        judul: "Web Portfolio Irfan",
+        kategori: "HTML",
+        waktu: "2026",
+        gambar: "/assets/projects/portofolioIpann.png",
+        deskripsi: "Website Portofolio Pribadi yang dibuat menggunakan HTML dan CSS.",
+        fitur: [
+            "Halaman Home",
+            "Halaman About",
+            "Halaman Contact",
+        ],
+    },
+    {
+        slug: "web-portofolio-irfan-v3",
+        judul: "Web Portofolio Irfan v3",
+        kategori: "Next.JS",
+        waktu: "2026",
+        gambar: "/assets/projects/webPortofolioIrfanV3.png",
+        deskripsi: "Website Portofolio Pribadi yang dibuat menggunakan Framework Next.JS, TailwindCSS, serta Supabase sebagai database.",
+        fitur: [
+            "Halaman Home, About, Project, dan Contact",
+            "Dokumentasi Pribadi",
+            "Fitur Dark Mode",
+            "Fitur Form Kontak",
+            "Fitur CRUD Project",
+            "Halaman CV",
+        ],
     }
 ]
