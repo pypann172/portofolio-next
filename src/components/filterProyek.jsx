@@ -4,9 +4,11 @@ import { useState } from "react";
 import ProyekCard from "@/components/proyekCard";
 import { Button } from "@/components/ui/button";
 
-const daftarKategori = ["Semua", "HTML", "ESP32", "Next.JS", "Figma"];
-
 export default function FilterProyek({ proyek }) {
+  const daftarKategori = [
+    "Semua",
+    ...new Set(proyek.map((item) => item.kategori).filter(Boolean)),
+  ];
   const [kategori, setKategori] = useState("Semua");
   const [kata, setKata] = useState("");
   const kataKecil = kata.toLowerCase();
@@ -47,7 +49,8 @@ export default function FilterProyek({ proyek }) {
           <Button
             variant="link"
             onClick={() => setKata("")}
-            className="mt-2 px-0 text-aksen">
+            className="mt-2 px-0 text-aksen"
+          >
             Hapus pencarian
           </Button>
         )}

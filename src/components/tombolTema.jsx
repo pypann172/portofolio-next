@@ -26,7 +26,7 @@ export default function TombolTema() {
     <Button
       variant="outline"
       onClick={gantiTema}
-      className="border-white bg-transparent text-white hover:bg-aksen hover:text-white"
+      className="border-white bg-transparent text-white hover:bg-aksen hover:text-white font-bold"
     >
       {gelap ? "Mode Terang" : "Mode Gelap"}
     </Button>
