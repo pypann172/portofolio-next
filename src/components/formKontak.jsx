@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const kelasInput = "mt-1 w-full rounded-lg border border-gray-300 dark:border-slate-600   bg-white dark:bg-slate-900   p-2";
+const kelasInput = "mt-1 w-full rounded-lg border border-input   bg-card   p-2";
 
 export default function FormKontak() {
   const [nama, setNama] = useState("");
@@ -127,11 +127,11 @@ export default function FormKontak() {
 
       <button
         type="submit"
-        className="rounded-lg bg-aksen px-5 py-2 font-semibold text-white"
+        className="inline-flex items-center justify-center rounded-lg bg-aksen px-5 py-2 font-semibold text-white hover:opacity-90"
       >
         Kirim Pesan
       </button>
-      <p className="text-sm text-gray-600 dark:text-gray-400  ">
+      <p className="text-sm text-muted-foreground">
         Form ini belum mengirim pesan.
       </p>
 

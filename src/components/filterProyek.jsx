@@ -2,18 +2,9 @@
 
 import { useState } from "react";
 import ProyekCard from "@/components/proyekCard";
+import { Button } from "@/components/ui/button";
 
-const daftarKategori = [
-  "Semua",
-  "HTML",
-  "ESP32",
-  "Next.JS",
-  "Figma",
-];
-const tombolBiasa =
-  "rounded-full border border-utama dark:border-slate-500 px-4 py-1 text-sm font-semibold text-utama dark:text-blue-200";
-const tombolAktif =
-  "rounded-full border border-aksen bg-aksen px-4 py-1 text-sm font-semibold text-white";
+const daftarKategori = ["Semua", "HTML", "ESP32", "Next.JS", "Figma"];
 
 export default function FilterProyek({ proyek }) {
   const [kategori, setKategori] = useState("Semua");
@@ -31,14 +22,13 @@ export default function FilterProyek({ proyek }) {
     <div className="mt-8">
       <div className="flex flex-wrap gap-2">
         {daftarKategori.map((k) => (
-          <button
+          <Button
             key={k}
-            type="button"
+            variant={kategori === k ? "default" : "outline"}
             onClick={() => setKategori(k)}
-            className={kategori === k ? tombolAktif : tombolBiasa}
           >
             {k}
-          </button>
+          </Button>
         ))}
       </div>
       <div className="mt-6">
@@ -51,22 +41,21 @@ export default function FilterProyek({ proyek }) {
           value={kata}
           onChange={(e) => setKata(e.target.value)}
           placeholder="Contoh: Next.JS"
-          className="mt-1 w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 p-2 dark:text-gray-100 md:w-80"
+          className="mt-1 w-full rounded-lg border border-input bg-card p-2 text-foreground md:w-80"
         />
         {kata !== "" && (
-          <button
-            type="button"
+          <Button
+            variant="link"
             onClick={() => setKata("")}
-            className="mt-2 text-sm font-semibold text-aksen dark:textred-300 hover:underline"
-          >
+            className="mt-2 px-0 text-aksen">
             Hapus pencarian
-          </button>
+          </Button>
         )}
       </div>
-      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+      <p className="mt-4 text-sm text-muted-foreground">
         Menampilkan {hasil.length} dari {proyek.length} proyek
       </p>
-      <p className="mt-4 text-gray-700 dark:text-gray-300  ">
+      <p className="mt-4 text-muted-foreground  ">
         Kategori terpilih: {kategori}
       </p>
       <div className="mt-6 grid gap-6 md:grid-cols-3">
@@ -76,8 +65,8 @@ export default function FilterProyek({ proyek }) {
       </div>
       {hasil.length === 0 && (
         <p
-          className="mt-6 rounded-xl border border-dashed border-gray-300 dark:border-slate-600
- p-6 text-center text-gray-600 dark:text-gray-400 "
+          className="mt-6 rounded-xl border border-dashed border-input
+ p-6 text-center text-muted-foreground "
         >
           Belum ada proyek yang cocok.
         </p>

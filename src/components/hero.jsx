@@ -26,12 +26,12 @@ export default function Hero({ nama, tagLine }) {
                 width={180}
                 height={180}
                 loading="eager"
-                className="w-40 h-40 rounded-full overflow-hidden object-cover border-3 border-utama dark:border-slate-500 md:w-50 md:h-50"
+                className="w-40 h-40 rounded-full overflow-hidden object-cover border-3 border-primary md:w-50 md:h-50"
             />
             <div>
-                <h1 className="text-3xl font-bold text-utama dark:text-blue-200 ">
+                <h1 className="text-3xl font-bold text-primary ">
                     <span className={`${geforce.className}`}>Halo, saya {nama}</span>
-                    <p className="mt-3 text-lg text-gray-700 dark:text-gray-300  ">
+                    <p className="mt-3 text-lg text-muted-foreground  ">
                         {tagLine}
                     </p>
                 </h1>
