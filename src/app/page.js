@@ -6,17 +6,12 @@ import ProyekCard from "@/components/proyekCard";
 import { supabase } from "@/lib/supabase";
 import { buttonVariants } from "@/components/ui/button";
 
-const skills = [
-  { nama: "HTML", level: "Menengah" },
-  { nama: "CSS", level: "Menengah" },
-  { nama: "JavaScript", level: "Dasar" },
-  { nama: "Git dan Github", level: "Dasar" },
-  { nama: "Desain poster dengan Canva", level: "Mahir" },
-  { nama: "Editor Capcut", level: "Menengah" },
-];
-
-
 export default async function Home() {
+  const { data: skills } = await supabase
+    .from("skills")
+    .select("*")
+    .order("id");
+
   const { data: proyekTerbaru } = await supabase
     .from("projects")
     .select("*")
@@ -51,7 +46,7 @@ export default async function Home() {
         <div className="mt-10">
           <Kartu judul="Keahlian">
             <div className="grid gap-4 md:grid-cols-3">
-              {skills.map((skill) => (
+              {skills && skills.map((skill) => (
                 <SkillCard
                   key={skill.nama}
                   nama={skill.nama}

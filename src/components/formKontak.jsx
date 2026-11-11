@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 const kelasInput = "mt-1 w-full rounded-lg border border-input   bg-card   p-2";
 
@@ -52,7 +53,9 @@ export default function FormKontak() {
           placeholder="Contoh: Budi Santoso"
           className={kelasInput}
         />
-        {error.nama && <p className="mt-1 text-sm text-aksen   ">{error.nama}</p>}
+        {error.nama && (
+          <p className="mt-1 text-sm text-aksen   ">{error.nama}</p>
+        )}
       </div>
 
       <div>
@@ -68,7 +71,9 @@ export default function FormKontak() {
           placeholder="nama@gmail.com"
           className={kelasInput}
         />
-        {error.email && <p className="mt-1 text-sm text-aksen   ">{error.email}</p>}
+        {error.email && (
+          <p className="mt-1 text-sm text-aksen   ">{error.email}</p>
+        )}
       </div>
 
       <div>
@@ -122,15 +127,14 @@ export default function FormKontak() {
           placeholder="Tulis pesanmu di sini"
           className={kelasInput}
         />
-        {error.pesan && <p className="mt-1 text-sm text-aksen   ">{error.pesan}</p>}
+        {error.pesan && (
+          <p className="mt-1 text-sm text-aksen   ">{error.pesan}</p>
+        )}
       </div>
 
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center rounded-lg bg-aksen px-5 py-2 font-semibold text-white hover:opacity-90"
-      >
+      <Button type="submit" size="lg">
         Kirim Pesan
-      </button>
+      </Button>
       <p className="text-sm text-muted-foreground">
         Form ini belum mengirim pesan.
       </p>

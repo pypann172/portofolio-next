@@ -1,27 +1,34 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 export default function TombolTema() {
-  // Dijalankan sekali setelah tombol tampil di browser: pakai tema yang tersimpan
-  useEffect(() => {
-    if (localStorage.getItem("tema") === "gelap") {
-      document.documentElement.classList.add("dark");
+  const [gelap, setGelap] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("tema") === "gelap";
     }
-  }, []);
+    return false;
+  });
+
+  // Menyesuaikan tema pada browser
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", gelap);
+  }, [gelap]);
 
   function gantiTema() {
-    const gelap = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("tema", gelap ? "gelap" : "terang");
+    const temaGelap = !gelap;
+    localStorage.setItem("tema", temaGelap ? "gelap" : "terang");
+    setGelap(temaGelap);
   }
 
   return (
-    <button
-      type="button"
+    <Button
+      variant="outline"
       onClick={gantiTema}
-      className="rounded-lg border border-white px-3 py-1 text-sm font-semibold text-white hover:border-aksen hover:bg-aksen">
-      <span className="dark:hidden">Mode Gelap</span>
-      <span className="hidden dark:inline">Mode Terang</span>
-    </button>
+      className="border-white bg-transparent text-white hover:bg-aksen hover:text-white"
+    >
+      {gelap ? "Mode Terang" : "Mode Gelap"}
+    </Button>
   );
 }
