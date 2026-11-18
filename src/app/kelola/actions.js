@@ -48,14 +48,14 @@ export async function hapusPesan(formData) {
     revalidatePath("/buku-tamu");
 }
 
-const daftarKategori = ["HTML", "CSS", "JavaScript", "Next.js"];
+const daftarKategori = ["HTML", "CSS", "JavaScript", "Next.JS", "Figma", "ESP32", "Supabase", "Tailwind CSS"];
 
 function bacaProyek(formData) {
     return {
         judul: formData.get("judul").trim(),
         slug: formData.get("slug").trim(),
         kategori: formData.get("kategori").trim(),
-        minggu: formData.get("minggu").trim(),
+        waktu: formData.get("waktu").trim(),
         deskripsi: formData.get("deskripsi").trim(),
         fitur: formData.get("fitur").split("\n").map((f) => f.trim()).filter((f) => f !== ""),
         gambar_url: formData.get("gambar_url").trim(), 
@@ -70,10 +70,10 @@ function cekProyek(proyek) {
         return "Slug tidak boleh memakai spasi. Gunakan tanda hubung, contoh: buku-tamu."
     }
     if (!daftarKategori.includes(proyek.kategori)) {
-        return "Kategori harus HTML, CSS, JavaScript, atau Next.js."
+        return "Kategori harus HTML, CSS, JavaScript, Next.JS, Figma, ESP32, Supabase, Tailwind CSS."
     }
-    if (!proyek.gambar_url.startsWith("/proyek/")) {
-        return "Alamat gambar harus diawali /proyek/, contoh: /proyek/proyek-buku-tamu.png."
+    if (!proyek.gambar_url.startsWith("/assets/projects")) {
+        return "Alamat gambar harus diawali /assets/projects/, contoh: /assets/projects/proyek-buku-tamu.png."
     }
     return "";
 }
