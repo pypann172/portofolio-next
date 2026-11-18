@@ -22,10 +22,11 @@ const geforce = localFont({
 });
 
 const menu = [
-  { href: "/", label: "Home" },
-  { href: "/tentang", label: "About" },
-  { href: "/proyek", label: "Projects" },
-  { href: "/kontak", label: "Contact" },
+  { href: "/", label: "Beranda" },
+  { href: "/tentang", label: "Tentang" },
+  { href: "/proyek", label: "Proyek" },
+  { href: "/buku-tamu", label: "Buku Tamu" },
+  { href: "/kontak", label: "Kontak" },
 ];
 
 export default function Navbar() {
@@ -33,12 +34,12 @@ export default function Navbar() {
 
   return (
     <header className={`${geforce.className} bg-utama/90 text-white dark:bg-utama/60`}>
-      <nav className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
+      <nav className="mx-auto flex max-w-5xl flex-col gap-3 px-2 py-4 md:flex-row md:items-center md:justify-between md:px-4 md:py-4">
         <Link href="/" className="font-bold">
           Irfan Syah
         </Link>
 
-        <ul className="flex flex-wrap gap-x-5 gap-y-2">
+        <ul className="flex flex-wrap gap-x-2 gap-y-2">
           {menu.map((item) => {
             let kelas = "text-gray-400 hover:text-white";
 
@@ -60,8 +61,8 @@ export default function Navbar() {
               </li>
             );
           })}
-        </ul>
         <TombolTema />
+        </ul>
       </nav>
     </header>
   );

@@ -136,7 +136,7 @@ export default function FormKontak() {
         Kirim Pesan
       </Button>
       <p className="text-sm text-muted-foreground">
-        Form ini belum mengirim pesan.
+        Form ini belum mengirim pesan. Untuk menyapa saya, tulis pesan di halaman Buku Tamu.
       </p>
 
       {berhasil && (
